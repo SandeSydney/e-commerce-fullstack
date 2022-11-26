@@ -4,9 +4,9 @@ const { getAllProducts, addOrUpdateProducts, getOneProduct, softDeleteProduct } 
 const router = Router()
 
 router.get('/', getAllProducts)
-// router.post('/', addOrUpdateProducts)
+router.post('/', addOrUpdateProducts)
 router.get('/:id', getOneProduct)
-router.put('/:id', addOrUpdateProducts)
+// router.put('/:id', addOrUpdateProducts)
 router.delete('/:id', softDeleteProduct)
 
 // Export the router. Has all methods
