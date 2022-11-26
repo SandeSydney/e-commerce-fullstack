@@ -1,7 +1,7 @@
 const getAllProducts = async (req, res) => {
 }
 
-const addOrUpdateProduct = async (req, res) => {
+const addOrUpdateProducts = async (req, res) => {
     
 }
 
@@ -16,6 +16,6 @@ const getOneProduct = async (req, res) => {
 module.exports = {
     getAllProducts,
     getOneProduct,
-    addOrUpdateProduct,
+    addOrUpdateProducts,
     softDeleteProduct
 }
