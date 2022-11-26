@@ -1,13 +1,12 @@
-/** This sql script creates or modifies a procedure that targets to return only a single item from the database. The item fetched will be that which has the same id as the passed parameter.
-*/
-
-CREATE OR ALTER PROC getOneProduct (@id INT)
+-- usp_GetOneProduct is a procedure definition that gets a single product from the producsTable in our database
+-- this procedure selects the product that is referenced by the id provided its not deleted
+CREATE OR ALTER PROC usp_GetOneProduct (@id INT)
 AS
 BEGIN
 
     SELECT *
     FROM dbo.productsTable
     WHERE
-        id = @id
+        id = @id AND IsDeleted = 0
 
 END
