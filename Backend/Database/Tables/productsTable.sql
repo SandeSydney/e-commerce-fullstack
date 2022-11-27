@@ -1,6 +1,3 @@
-/** The sql query below is intended to create a table called productsTable and provide all the column properties
-*/
-
 CREATE TABLE productsTable
 (
     id VARCHAR(100) NOT NULL,
