@@ -1,0 +1,25 @@
+
+
+GET http://localhost:4000/products
+
+
+###
+
+GET http://localhost:4000/products/ubwdusfjiiweniqw
+
+###
+
+POST  http://localhost:4000/products
+Content-Type: application/json
+
+{
+    "id":"fgyuhijojokkp",
+    "name": "Testing 2",
+    "description":"A test done from POST",
+    "price":"1500",
+    "image_url":"www.minchr.com/image.png",
+    "discount_rate":"20"
+}
+
+###
+DELETE http://localhost:4000/products/ubwdusfjiiweniqw
