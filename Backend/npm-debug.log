@@ -1,0 +1,43 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'view',
+1 verbose cli   '--json',
+1 verbose cli   'express',
+1 verbose cli   'description',
+1 verbose cli   'dist-tags.latest',
+1 verbose cli   'homepage',
+1 verbose cli   'version' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly mapToRegistry name express
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry uri https://registry.npmjs.org/express
+8 verbose request uri https://registry.npmjs.org/express
+9 verbose request no auth needed
+10 info attempt registry request try #1 at 6:56:29 PM
+11 verbose request id 865408638c5dcbd8
+12 http request GET https://registry.npmjs.org/express
+13 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+14 info attempt registry request try #2 at 6:56:39 PM
+15 http request GET https://registry.npmjs.org/express
+16 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+17 info attempt registry request try #3 at 6:57:39 PM
+18 http request GET https://registry.npmjs.org/express
+19 verbose stack Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+19 verbose stack     at Object._errnoException (util.js:1022:11)
+19 verbose stack     at errnoException (dns.js:55:15)
+19 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:92:26)
+20 verbose cwd /media/sande/EDUCATION/0 THEJitu/FullStack JS/Ecommerce/Backend
+21 error Linux 5.4.0-131-generic
+22 error argv "/usr/bin/node" "/usr/bin/npm" "view" "--json" "express" "description" "dist-tags.latest" "homepage" "version"
+23 error node v8.10.0
+24 error npm  v3.5.2
+25 error code EAI_AGAIN
+26 error errno EAI_AGAIN
+27 error syscall getaddrinfo
+28 error getaddrinfo EAI_AGAIN registry.npmjs.org:443
+29 error If you need help, you may report this error at:
+29 error     <https://github.com/npm/npm/issues>
+30 verbose exit [ 1, true ]
