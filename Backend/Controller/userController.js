@@ -50,9 +50,7 @@ const loginUser = async (req, res) => {
                     IsDeleted,
                     ...payload
                 } = user
-                const token = jwt.sign(payload, process.env.SECRET, {
-                    expiresIn: '300h'
-                })
+                const token = jwt.sign(payload, process.env.SECRET)
                 return res.status(200).json({
                     message: "Logged in successfully!",
                     token
@@ -74,7 +72,20 @@ const loginUser = async (req, res) => {
     }
 }
 
+
+const homepage = async (req, res) => {
+    try {
+        const {
+            username
+        } = req.info
+        res.json(`Welcome ${username}`)
+    } catch (error) {
+        res.status(404).json({error:error.message})
+    }
+}
+
 module.exports = {
     signUpUser,
-    loginUser
+    loginUser,
+    homepage
 }
