@@ -91,9 +91,9 @@ nav {
   min-width: 16px;
   min-height: 16px;
   text-align: center;
-  background-color: white;
+  background-color: #ef4b4ed0;
   border-radius: 50%;
-  color: #96565c;
+  color: white;
 }
 
 .linkItems,
@@ -267,7 +267,7 @@ textarea {
 }
 
 .productItem:hover {
-  box-shadow: 0 8px 16px 0 rgba(239, 75, 79, 0.3),
+  box-shadow: 0 8px 16px 0 rgba(239, 75, 79, 0.302),
     0 6px 20px 0 rgba(239, 75, 79, 0.19);
   border: 1px solid #ff9a9b;
 }
