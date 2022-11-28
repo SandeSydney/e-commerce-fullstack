@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { v4 } from 'uuid'
 import { showAddForm, addNewProduct } from '../Features/productsSlice'
@@ -17,17 +18,21 @@ function AddProduct() {
     const imageRef = useRef(null)
     const priceRef = useRef(null)
     const discRateRef = useRef(0)
-    const ctgryRef = useRef(null)
+
+    useEffect(()=>{
+        nameRef.current.focus()
+    },[])
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
         if (nameRef.current.value.trim() === '') setNameErr(true)
         if (descRef.current.value.trim() === '') setDescErr(true)
         if (priceRef.current.value.trim() === '') setPriceErr(true)
+        if (imageRef.current.value.trim() === '') setImageErr(true)
 
         if (nameRef.current.value.trim() && descRef.current.value.trim() && priceRef.current.value.trim() && imageRef.current.value.trim()) {
             const newProduct = {
-                id: v4(), 
+                id: v4(),
                 name: nameRef.current.value,
                 description: descRef.current.value,
                 price: priceRef.current.value,
@@ -42,8 +47,6 @@ function AddProduct() {
                 dispatch(showAddForm(false))
             }, 1500)
         }
-
-
     }
 
     return (

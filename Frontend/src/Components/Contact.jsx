@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useEffect } from 'react'
 
 function Contact() {
+  useEffect(()=>{
+    nameRef.current.focus()
+  },[])
+
+  const nameRef = useRef(null)
   return (
     <div className="container containerContact">
       <div className='largeFormDiv'>
@@ -8,7 +14,7 @@ function Contact() {
           <h2><u>Contact Us</u></h2>
           <div className="form-element">
             <label htmlFor="contactName">Name:</label>
-            <input type="text" name='contactName' />
+            <input ref={nameRef} type="text" name='contactName' />
           </div>
           <div className="form-element">
             <label htmlFor="subject">Subject:</label>
