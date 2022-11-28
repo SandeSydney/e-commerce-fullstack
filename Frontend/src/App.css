@@ -32,6 +32,10 @@ button {
   background-color: #f4e910;
 }
 
+.deleteBtn{
+  background-color: #ff6347;
+}
+
 .submitBtn {
   background-color: #4eab3b;
 }
@@ -44,7 +48,7 @@ button {
 nav {
   color: #ffffff;
   min-width: 90%;
-  min-height: 8vh;
+  min-height: 5vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -314,10 +318,18 @@ textarea {
   font-size: 14px;
 }
 
+.itemDetails {
+  width: 45%;
+  text-align: center;
+}
+
 .cartDisplay {
-  border: 1px solid tomato;
-  min-width: 70vw;
-  min-height: 60vh;
+  box-shadow: 0 8px 16px 0 rgba(102, 102, 102, 0.3),
+    0 6px 20px 0 rgba(100, 84, 84, 0.212);
+  border: 1px solid #a3a1a1;
+  border-radius: 10px;
+  min-width: 65vw;
+  max-height: 90vh;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -325,13 +337,23 @@ textarea {
 }
 
 .cartBody {
-  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 15px;
+  max-height: 55vh;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.cartItem {
+  border: 1px solid lightgrey;
   border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 8px;
 }
 
 .cartBody img {
@@ -355,14 +377,47 @@ textarea {
 
 .itemQuantity {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 5px;
 }
 
 .operator {
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0px 4px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.cartFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin: 0px 20px;
+  border-top: 1px solid #808080;
+}
+
+.emptyspace {
+  flex: 1;
+}
+
+.totalsDiv {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.totals {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pay{
+  text-align: center;
 }
 
 /* ***********************************************************
