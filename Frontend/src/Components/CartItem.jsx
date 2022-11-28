@@ -12,9 +12,9 @@ function CartItem({ item }) {
                 <div className='qtty'>
                     <p>Quantity:</p>
                     <div className='itemQuantity'>
-                        <p className='operator'>-</p>
+                        <button className='operator'>-</button>
                         <p>1</p>
-                        <p className='operator'>+</p>
+                        <button className='operator'>+</button>
                     </div>
 
                 </div>
