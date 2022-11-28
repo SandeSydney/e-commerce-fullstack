@@ -418,7 +418,8 @@ textarea {
 
 .totals {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 5px 20px;
 }
 
 .pay{
