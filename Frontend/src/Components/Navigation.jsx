@@ -1,8 +1,8 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { selectAllCartItems } from '../Features/cartSlice';
 import { logoutUser, removeUser } from '../Features/usersSlice';
-import cartImg from '../Assets/cart.png'
 
 function Navigation({ user }) {
     let navUser
@@ -14,6 +14,21 @@ function Navigation({ user }) {
         dispatch(logoutUser())
         dispatch(removeUser())
     }
+
+    const cart = useSelector(selectAllCartItems)
+    const gettotalitems = () => {
+        if (cart.length) {
+            let total = 0
+            for (let key in cart) {
+                total += cart[key].quantity
+            }
+            return total
+        } else {
+            return 0
+        }
+    }
+
+
     return (
         <nav>
             <h1>
@@ -29,7 +44,11 @@ function Navigation({ user }) {
                     <Link className='links' to={"/homepage/shopping-cart"}>Cart
                     </Link>
                     <div className='cartImgDiv'>
-                        <div className='cartQuantity'>5</div>
+                        <div className='cartQuantity'>
+                            <p>
+                                {gettotalitems()}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
