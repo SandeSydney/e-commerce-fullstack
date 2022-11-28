@@ -1,20 +1,25 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
+import { decreaseItemQuantity, increaseItemQuantity, singleItemQuantity } from '../Features/cartSlice'
 
 function CartItem({ item }) {
-    return (
+    const dispatch = useDispatch()
 
+    return (
         <div className="cartItem">
-            <img src={item.image} alt="" />
+            <img src={item.image_url} alt="" />
             <div className="itemDetails">
-                <p>{item.title}</p>
+                <p>{item.name}</p>
             </div>
             <div className="pricing">
                 <div className='qtty'>
                     <p>Quantity:</p>
                     <div className='itemQuantity'>
-                        <button className='operator'>-</button>
-                        <p>1</p>
-                        <button className='operator'>+</button>
+                        <button className='operator' onClick={()=>{dispatch(decreaseItemQuantity)}}>-</button>
+                        <p>{item.quantity}</p>
+                        <button className='operator' onClick={()=>{dispatch(increaseItemQuantity)}}>+</button>
                     </div>
 
                 </div>
