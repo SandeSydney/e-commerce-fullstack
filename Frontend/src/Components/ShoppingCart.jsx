@@ -1,9 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectAllCartItems } from '../Features/cartSlice'
 import CartItem from './CartItem'
 
 function ShoppingCart() {
+  const dispatch = useDispatch()
 
   const cartItems = useSelector(selectAllCartItems)
 
@@ -19,14 +20,16 @@ function ShoppingCart() {
     }
   }
 
-  const getTotalPrice = ()=>{
-    if(cartItems.length){
+  const getTotalPrice = () => {
+    if (cartItems.length) {
       let totalPrice = 0
-      for(let key in cartItems){
-        let itemsPrice = (cartItems[key].price)*(cartItems[key].quantity)
+      for (let key in cartItems) {
+        let itemsPrice = (cartItems[key].price) * (cartItems[key].quantity)
         totalPrice += itemsPrice
       }
       return totalPrice
+    } else{
+      return 0
     }
   }
 
@@ -46,12 +49,12 @@ function ShoppingCart() {
           <div className="emptyspace"></div>
           <div className="totalsDiv">
             <div className='totals'>
-              <p>Total Price: </p>
-              <p>{getTotalPrice()}</p>
-            </div>
-            <div className='totals'>
               <p>Total Items: </p>
               <p>{gettotalitems()}</p>
+            </div>
+            <div className='totals'>
+              <p>Total Price: </p>
+              <p>{getTotalPrice()}</p>
             </div>
             <div className='pay'>
               <button className='submitBtn'>Pay Now</button>
