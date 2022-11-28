@@ -25,7 +25,7 @@ const Products = () => {
   let content
   if (status === 'loading') {
     // content = <img src="loadGif" alt="Loading" />
-    content = <div className='loadingDiv'><img src={load} alt="Loading..." /></div>
+    content = <div className='loadingDiv'><img src={load} alt="Loading..." /><p>Loading. Please Wait...</p></div>
   } else if (status === 'succeeded') {
     content = products.map((product, id) => {
       return <ProductItem key={id} product={product} />
