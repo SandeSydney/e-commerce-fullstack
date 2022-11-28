@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { v4 } from 'uuid'
 import { showAddForm, addNewProduct } from '../Features/productsSlice'
@@ -18,6 +19,10 @@ function AddProduct() {
     const priceRef = useRef(null)
     const discRateRef = useRef(0)
     const ctgryRef = useRef(null)
+
+    useEffect(()=>{
+        nameRef.current.focus()
+    },[])
 
     const handleOnSubmit = (e) => {
         e.preventDefault()

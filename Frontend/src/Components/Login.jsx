@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import '../App.css'
@@ -14,6 +15,10 @@ export default function Login() {
   const dispatch = useDispatch()
 
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    unameRef.current.focus()
+  },[])
 
   const handleChange = () => {
     setUname(unameRef.current.value)
