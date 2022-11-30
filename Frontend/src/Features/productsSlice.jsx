@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const FIRE_PRODUCTS_URL = 'http://localhost:4000/products'
+const DB_URL = 'http://localhost:4000/products'
 
 const initialState = {
     value: [],
@@ -12,7 +12,7 @@ const initialState = {
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
     try {
-        const response = await axios.get(FIRE_PRODUCTS_URL)
+        const response = await axios.get(DB_URL)
         let productData = []
         for(let key in response.data){
             productData.push({
@@ -33,7 +33,7 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
 
 export const addNewProduct = createAsyncThunk('products/addNewProduct', async (initialProduct) => {
     try {
-        const response = await axios.post(FIRE_PRODUCTS_URL, initialProduct)
+        const response = await axios.post(DB_URL, initialProduct)
         return response.data
     } catch (error) {
         return error.message
