@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const FIRE_PRODUCTS_URL = 'https://e-commerce-64fd7-default-rtdb.firebaseio.com/products.json'
+const FIRE_PRODUCTS_URL = 'http://localhost:4000/products'
 
 const initialState = {
     value: [],

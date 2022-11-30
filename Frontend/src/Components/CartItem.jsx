@@ -1,8 +1,6 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useSearchParams } from 'react-router-dom'
-import { decreaseItemQuantity, increaseItemQuantity, removeCartItem, singleItemQuantity } from '../Features/cartSlice'
+import { useDispatch } from 'react-redux'
+import { decreaseItemQuantity, increaseItemQuantity, removeCartItem } from '../Features/cartSlice'
 
 function CartItem({ item }) {
     const dispatch = useDispatch()

@@ -1,10 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { selectAllCartItems } from '../Features/cartSlice'
 import CartItem from './CartItem'
 
 function ShoppingCart() {
-  const dispatch = useDispatch()
 
   const cartItems = useSelector(selectAllCartItems)
 
