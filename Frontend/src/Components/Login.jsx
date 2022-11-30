@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import '../App.css'
 import { addUser, loginUser } from '../Features/usersSlice'
+import SignUp from './SignUp'
 
 export default function Login() {
   const [uname, setUname] = useState('')
@@ -16,9 +17,9 @@ export default function Login() {
 
   const navigate = useNavigate()
 
-  useEffect(()=>{
+  useEffect(() => {
     unameRef.current.focus()
-  },[])
+  }, [])
 
   const handleChange = () => {
     setUname(unameRef.current.value)
@@ -28,8 +29,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault()
     if (uname.trim() !== '' && pass.trim() !== '') {
-      dispatch(addUser({ name: uname, pass: pass }))
-      dispatch(loginUser())
+      dispatch(loginUser({name:uname, password: pass}))
       navigate('homepage/products')
     }
     clearInput()
@@ -47,25 +47,28 @@ export default function Login() {
       </div>
       <hr />
       <div className='container'>
-        <div className='loginDiv'>
-          <form>
-            <div>
-              <h2><u>Login</u></h2>
-            </div>
-            <div className="form-element">
-              <label htmlFor="userName">Username:</label>
-              <input type="text" name='userName' ref={unameRef} onChange={handleChange} />
-            </div>
-            <div className="form-element">
-              <label htmlFor="password">Password:</label>
-              <input type="text" name='password' ref={passRef} onChange={handleChange} />
-            </div>
-            <div className="formBtns">
-              <button className={"loginBtn"} onClick={handleLogin}>
-                <Link className='logLink' to={'/homepage/products'}>Login</Link>
-              </button>
-            </div>
-          </form>
+        <div className="signLogDiv">
+          <div className='loginDiv'>
+            <form>
+              <div>
+                <h2><u>Login</u></h2>
+              </div>
+              <div className="form-element">
+                <label htmlFor="userName">Username:</label>
+                <input type="text" name='userName' ref={unameRef} onChange={handleChange} />
+              </div>
+              <div className="form-element">
+                <label htmlFor="password">Password:</label>
+                <input type="text" name='password' ref={passRef} onChange={handleChange} />
+              </div>
+              <div className="formBtns">
+                <button className={"loginBtn"} onClick={handleLogin}>
+                  <Link className='logLink' to={'/homepage/products'}>Login</Link>
+                </button>
+              </div>
+            </form>
+          </div>
+          <SignUp/>
         </div>
       </div>
     </div>
