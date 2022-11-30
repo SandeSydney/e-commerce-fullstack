@@ -23,6 +23,11 @@ button {
   color: #ffffff;
 }
 
+.signupBtn {
+  background-color: #1363df;
+  color: #ffffff;
+}
+
 .addToCartBtn {
   background-color: #6abea7;
   cursor: pointer;
@@ -32,7 +37,7 @@ button {
   background-color: #f4e910;
 }
 
-.deleteBtn{
+.deleteBtn {
   background-color: #ff6347;
 }
 
@@ -169,8 +174,20 @@ nav {
   border-style: none;
 }
 
-.loginDiv {
-  min-width: 90%;
+.signLogDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 80vw;
+}
+
+.signLogDiv h2{
+  text-align: center;
+}
+
+.loginDiv,
+.signupDiv {
+  min-width: 40%;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
@@ -192,7 +209,6 @@ form,
   flex-direction: column;
   gap: 15px;
   justify-content: space-evenly;
-  align-items: center;
   min-width: 80%;
 }
 
@@ -216,6 +232,10 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+}
+
+.signLogDiv .form-element input {
+  width: auto;
 }
 
 .products {
@@ -284,7 +304,7 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 150px;
+  justify-content: space-around;
 }
 
 .scrollBtn {
@@ -418,14 +438,15 @@ textarea {
 
 .totals {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 5px 20px;
 }
 
-.pay{
+.pay {
   text-align: center;
 }
 
-.noCartItems{
+.noCartItems {
   text-align: center;
   padding: 20px;
 }

@@ -3,6 +3,7 @@ CREATE OR ALTER PROCEDURE usp_InsertUpdateUser
     @email VARCHAR(200),
     @username VARCHAR(200),
     @password VARCHAR(200),
+    @IsEmailed BIT = 0,
     @IsDeleted BIT = 0
 )
 AS
@@ -21,7 +22,7 @@ BEGIN
         BEGIN
         INSERT INTO dbo.usersTable
         VALUES
-            (@email, @username, @password, @IsDeleted)
+            (@email, @username, @password, @IsEmailed, @IsDeleted)
         PRINT 'User Added Successfully!'
     END
 END

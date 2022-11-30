@@ -12,8 +12,11 @@ export const usersSlice = createSlice({
         addUser: (state, action) => {
             state.value.push(action.payload)
         },
-        loginUser: (state) => {
-            state.logged = true
+        loginUser: (state, action) => {
+            let user = state.value.find(user => user.name === action.payload.name)
+            if (user) {
+                state.logged = true
+            }
         },
         logoutUser: (state) => {
             state.logged = false
